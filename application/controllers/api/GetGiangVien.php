@@ -6,7 +6,7 @@ require(APPPATH . 'libraries/Format.php');
 
 use chriskacerguis\RestServer\RestController;
 
-class GetChuDe extends RestController
+class GetGiangVien extends RestController
 {
 
 	public function __construct()
@@ -32,19 +32,9 @@ class GetChuDe extends RestController
 	    
 	        exit(0);
 	    }	
-		
-		$idcd = $this->get('idcd');
-		if($idcd !== null){
-			$data = $this->M_DATA->load_data('*','chude',array('MaCD' => $idcd));
-			$this->response($data,200);	
-		}
-		else{
-			$data = $this->M_DATA->load_alldata('*','chude');
-			$this->response($data,200);	
-		}			
+	    
+	   	$data = $this->M_DATA->load_data('*','giangvien,khachhang','giangvien.MaKH = khachhang.MaKH');
+	   	$this->response($data,200);
 	}
-
-
 }
-
 ?>

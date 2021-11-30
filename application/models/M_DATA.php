@@ -31,6 +31,9 @@ class M_DATA extends CI_Model{
 		$this->db->where($wherecolumn,$where);
 		$this->db->update($table);
 	}
+	public function insertdata($table,$data){
+		$this->db->insert($table,$data);
+	}
 }
 
 ?>

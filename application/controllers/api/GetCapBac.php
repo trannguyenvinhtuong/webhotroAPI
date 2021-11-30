@@ -33,8 +33,16 @@ class GetCapBac extends RestController
 	        exit(0);
 	    }	
 		
-		$data = $this->M_DATA->load_alldata('*','capbac');
-		$this->response($data,200);		
+	    $idcb = $this->get('idcb');
+	    if($idcb !== null){
+	    	$data = $this->M_DATA->load_data('*','capbac',array('MaCB'=>$idcb));
+			$this->response($data,200);		
+	    }
+	    else{
+	    	$data = $this->M_DATA->load_alldata('*','capbac');
+			$this->response($data,200);		
+	    }
+		
 	}
 
 

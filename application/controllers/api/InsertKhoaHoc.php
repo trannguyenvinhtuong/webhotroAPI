@@ -6,7 +6,7 @@ require(APPPATH . 'libraries/Format.php');
 
 use chriskacerguis\RestServer\RestController;
 
-class GetChuDe extends RestController
+class InsertKhoaHoc extends RestController
 {
 
 	public function __construct()
@@ -33,15 +33,30 @@ class GetChuDe extends RestController
 	        exit(0);
 	    }	
 		
-		$idcd = $this->get('idcd');
-		if($idcd !== null){
-			$data = $this->M_DATA->load_data('*','chude',array('MaCD' => $idcd));
-			$this->response($data,200);	
-		}
-		else{
-			$data = $this->M_DATA->load_alldata('*','chude');
-			$this->response($data,200);	
-		}			
+		$TenKhoaHoc = $this->get('tenkhoahoc');
+	    $MaCD = $this->get('theloai');
+	    $MaCB = $this->get('capbac');
+	    $MoTa = $this->get('mota');
+	    $GiaKH = $this->get('gia');
+	    $AnhKhoaHoc = $this->get('anh');
+	    $VideoGT = $this->get('video');
+	    $MaGV = $this->get('magv');
+	    $NgayDang = $this->get('ngaydang');
+
+	    $data = array(
+	    	'TenKhoaHoc' => $TenKhoaHoc,
+	    	'MaCD' => $MaCD,
+	    	'MaCB' => $MaCB,
+	    	'MoTa' => $MoTa,
+	    	'GiaKH' => $GiaKH,
+	    	'AnhKhoaHoc' => $AnhKhoaHoc,
+	    	'VideoGT' => $VideoGT,
+	    	'MaGV' => $MaGV,
+	    	'NgayDang' => $NgayDang
+	    );	    
+	   	$this->M_DATA->insertdata('khoahoc',$data);
+	   	$insert_id = $this->db->insert_id();
+	   	$this->response($insert_id,200);
 	}
 
 

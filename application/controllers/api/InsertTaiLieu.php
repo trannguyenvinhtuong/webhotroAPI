@@ -6,7 +6,7 @@ require(APPPATH . 'libraries/Format.php');
 
 use chriskacerguis\RestServer\RestController;
 
-class GetChuDe extends RestController
+class InsertTaiLieu extends RestController
 {
 
 	public function __construct()
@@ -33,15 +33,32 @@ class GetChuDe extends RestController
 	        exit(0);
 	    }	
 		
-		$idcd = $this->get('idcd');
-		if($idcd !== null){
-			$data = $this->M_DATA->load_data('*','chude',array('MaCD' => $idcd));
-			$this->response($data,200);	
-		}
-		else{
-			$data = $this->M_DATA->load_alldata('*','chude');
-			$this->response($data,200);	
-		}			
+		$TenTL = $this->get('tentl');
+	    $MoTa = $this->get('mota');
+	    $MaGV = $this->get('magv');
+	    $MaCB = $this->get('macb');
+	    $MaCD = $this->get('macd');
+	    $AnhTL = $this->get('anh');
+	    $GiaTL = $this->get('giatl');
+	    $Demo = $this->get('demo');
+	    $SoTrang = $this->get('sotrang');
+	    $NgayDang = $this->get('ngaydang');
+
+	    $data = array(
+	    	'TenTL' => $TenTL,
+	    	'MaCD' => $MaCD,
+	    	'MaCB' => $MaCB,
+	    	'MoTa' => $MoTa,
+	    	'GiaTL' => $GiaTL,
+	    	'AnhTL' => $AnhTL,
+	    	'Demo' => $Demo,
+	    	'MaGV' => $MaGV,
+	    	'SoTrang' => $SoTrang,
+	    	'NgayDang' => $NgayDang
+	    );	    
+	   	$this->M_DATA->insertdata('tailieu',$data);
+	   	$insert_id = $this->db->insert_id();
+	   	$this->response($insert_id,200);
 	}
 
 

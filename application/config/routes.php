@@ -53,6 +53,8 @@ $route['default_controller'] = 'Handling';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+// get
+
 $route['api/getkhoahoc'] = 'api/GetKhoaHoc/index';
 $route['api/getchude'] = 'api/GetChuDe/index';
 $route['api/getchudelimit'] = 'api/GetChuDeLimit/index';
@@ -65,4 +67,28 @@ $route['api/getkhachhang'] = 'api/GetKhachHang/index';
 $route['api/getkhoahockh'] = 'api/GetKhoaHocKH/index';
 $route['api/gettailieukh'] = 'api/GetTaiLieuKH/index';
 $route['api/getkhuyenmaitl'] = 'api/GetKMTL/index';
+$route['api/getkhoahoctheogv'] = 'api/GetKhoaHocTheoGV/index';
+$route['api/gettailieutheogv'] = 'api/GetTaiLieuTheoGV/index';
+$route['api/getthongtingv'] = 'api/GetThongTinGV/index';
+$route['api/getdiem'] = 'api/GetDiem/index';
+$route['api/gethoadon'] = 'api/GetHoaDon/index'; 
+$route['api/getgiangvien'] = 'api/GetGiangVien/index'; 
+
+// checking
+
+$route['api/checkgiangvien'] = 'api/CheckGiangVien/index';
+
+// insert
+
+$route['api/insertkhoahoc'] = 'api/InsertKhoaHoc/index';
+$route['api/insertthongtinkhoahoc'] = 'api/InsertThongTinKhoaHoc/index';
+$route['api/inserthoadon'] = 'api/InsertHoaDon/index';
+$route['api/insertcthd'] = 'api/InsertCTHD/index';
+$route['api/inserttailieu'] = 'api/InsertTaiLieu/index';
+$route['api/insertluutrutl'] = 'api/InsertLuuTruTL/index';
+$route['api/insertketqua'] = 'api/InsertKetQua/index';
+
+// update
+
 $route['api/updatemk'] = 'api/UpdateMK/index';
+$route['api/updatekhachhang'] = 'api/UpdateKhachHang/index';

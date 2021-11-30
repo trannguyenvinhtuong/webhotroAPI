@@ -6,7 +6,7 @@ require(APPPATH . 'libraries/Format.php');
 
 use chriskacerguis\RestServer\RestController;
 
-class GetChuDe extends RestController
+class UpdateKhachHang extends RestController
 {
 
 	public function __construct()
@@ -33,15 +33,21 @@ class GetChuDe extends RestController
 	        exit(0);
 	    }	
 		
-		$idcd = $this->get('idcd');
-		if($idcd !== null){
-			$data = $this->M_DATA->load_data('*','chude',array('MaCD' => $idcd));
-			$this->response($data,200);	
+	    $makh = $this->get('makh');
+	    $tenkh = $this->get('tenkh');
+	    $sdt = $this->get('sdt');
+	    $diachi = $this->get('diachi');
+	    $email = $this->get('email');
+	    if($makh !== null && $tenkh !== null && $sdt !== null && $diachi !== null && $email !== null){
+	    	$this->M_DATA->updatedata('khachhang','TenKH',$tenkh,'MaKH',$makh);
+	    	$this->M_DATA->updatedata('khachhang','SDT',$sdt,'MaKH',$makh);
+	    	$this->M_DATA->updatedata('khachhang','DiaChi',$diachi,'MaKH',$makh);
+	    	$this->M_DATA->updatedata('khachhang','Email',$email,'MaKH',$makh);
+	    	$this->response("sucess");
 		}
 		else{
-			$data = $this->M_DATA->load_alldata('*','chude');
-			$this->response($data,200);	
-		}			
+			$this->response("error");	
+		}
 	}
 
 
