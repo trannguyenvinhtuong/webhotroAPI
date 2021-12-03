@@ -42,6 +42,13 @@ class InsertKhoaHoc extends RestController
 	    $VideoGT = $this->get('video');
 	    $MaGV = $this->get('magv');
 	    $NgayDang = $this->get('ngaydang');
+	    $GioiThieuKH = $this->get('gioithieu');
+	    $Marketing1 = $this->get('dieu1');
+	    $Marketing2 = $this->get('dieu2');
+	    $Marketing3 = $this->get('dieu3');
+	    $Marketing4 = $this->get('dieu4');
+	    $Marketing5 = $this->get('dieu5');
+	    $Marketing6 = $this->get('dieu6');
 
 	    $data = array(
 	    	'TenKhoaHoc' => $TenKhoaHoc,
@@ -56,6 +63,26 @@ class InsertKhoaHoc extends RestController
 	    );	    
 	   	$this->M_DATA->insertdata('khoahoc',$data);
 	   	$insert_id = $this->db->insert_id();
+		$khuyenmai = array(
+		  	'MaKhoaHoc' => $insert_id,
+		  	'TenKhuyenMai' =>'chuaco',
+		  	'PhanTramGiam' => '0',
+		  	'NgayBatDau' => '02-12-2021',
+		  	'NgayHetHan' => '02-12-2021'
+		);
+		$this->M_DATA->insertdata('khuyenmaikhoahoc',$khuyenmai);
+		$thongtinkhoahoc = array(
+	    	'MaKhoaHoc' => $insert_id,
+	    	'GioiThieuKH' => $GioiThieuKH,
+	    	'Marketing1' => $Marketing1,
+	    	'Marketing2' => $Marketing2,
+	    	'Marketing3' => $Marketing3,
+	    	'Marketing4' => $Marketing4,
+	    	'Marketing5' => $Marketing5,
+	    	'Marketing6' => $Marketing6
+	    );	
+	    $this->M_DATA->insertdata('thongtinkhoahoc',$thongtinkhoahoc);
+		
 	   	$this->response($insert_id,200);
 	}
 
