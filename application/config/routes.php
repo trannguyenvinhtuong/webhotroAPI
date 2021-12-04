@@ -88,6 +88,8 @@ $route['api/inserttailieu'] = 'api/InsertTaiLieu/index';
 $route['api/insertluutrutl'] = 'api/InsertLuuTruTL/index';
 $route['api/insertketqua'] = 'api/InsertKetQua/index';
 $route['api/insertkhoahockhachhang'] = 'api/InsertKhoaHocKhachHang/index';
+$route['api/insertkhachhang'] = 'api/InsertKhachHang/index';
+$route['api/insertgiangvien'] = 'api/InsertGiangVien/index';
 
 // update
 

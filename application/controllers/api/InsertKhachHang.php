@@ -6,7 +6,7 @@ require(APPPATH . 'libraries/Format.php');
 
 use chriskacerguis\RestServer\RestController;
 
-class GetKhachHang extends RestController
+class InsertKhachHang extends RestController
 {
 
 	public function __construct()
@@ -32,20 +32,30 @@ class GetKhachHang extends RestController
 	    
 	        exit(0);
 	    }	
-	    $tendn = $this->get('tendn');
-	    $idkh = $this->get('idkh');
-	    if($tendn !== null){
-	    	$data = $this->M_DATA->load_data('*','khachhang',array('TaiKhoan' => $tendn));
-	    	$this->response($data, 200);
-	    }
-	    if($idkh !== null){
-	    	$data = $this->M_DATA->load_data('*','khachhang',array('MaKH' => $idkh));
-	    	$this->response($data, 200);
-	    }	
-	    else{
-	    	$data = $this->M_DATA->load_alldata('*','khachhang');
-	    	$this->response($data, 200);	
-	    }	    
+		
+		$TenKH = $this->get('TenKH');
+		$SDT = $this->get('SDT');
+	    $DiaChi = $this->get('DiaChi');
+	    $Email = $this->get('Email');
+	    $AnhDaiDien = "https://drive.google.com/uc?export=view&id=1JTdABYFaasXQNlOk9sPatLw6A2AwPkIl";
+	    $TaiKhoan = $this->get('TaiKhoan');
+	    $MatKhau = $this->get('MatKhau');
+
+	    $data = array(
+	    	'TenKH' => $TenKH,
+	    	'SDT' => $SDT,
+	    	'DiaChi' => $DiaChi,
+	    	'Email' => $Email,
+	    	'AnhDaiDien' => $AnhDaiDien,
+	    	'TaiKhoan' => $TaiKhoan,
+	    	'MatKhau' => $MatKhau
+	    );	    
+	   	$this->M_DATA->insertdata('khachhang',$data);
+	   	$insert_id = $this->db->insert_id();
+	   	$this->response($insert_id,200);
 	}
+
+
 }
+
 ?>
