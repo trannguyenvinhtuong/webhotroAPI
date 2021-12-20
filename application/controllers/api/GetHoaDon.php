@@ -34,6 +34,7 @@ class GetHoaDon extends RestController
 	    }	
 		
 		$id = $this->get('id');
+		$idhd = $this->get('idhoadon');
 		if($id!=null){
 			$data = $this->M_DATA->load_data('*',
 										'hoadon,chitiethoahon,khoahoc,khuyenmaikhoahoc',
@@ -41,8 +42,19 @@ class GetHoaDon extends RestController
 										);
 			$this->response($data,200);
 		}
+		if($idhd!=null){
+			$data = $this->M_DATA->load_data('*',
+										'hoadon,chitiethoahon,khoahoc,khuyenmaikhoahoc',
+										'hoadon.MaHD = chitiethoahon.MaHD and khoahoc.MaKhoaHoc = chitiethoahon.MaKhoaHoc and khuyenmaikhoahoc.MaKhoaHoc = khoahoc.MaKhoaHoc and hoadon.MaHD = '.$idhd.''
+										);
+			$this->response($data,200);
+		}
 		else{
-			$this->response('error',200);
+			$data = $this->M_DATA->load_data('*',
+										'hoadon,khachhang',
+										'khachhang.MaKH = hoadon.MaKH'
+										);
+			$this->response($data,200);
 		}
 	}
 

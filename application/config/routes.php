@@ -74,6 +74,8 @@ $route['api/getdiem'] = 'api/GetDiem/index';
 $route['api/gethoadon'] = 'api/GetHoaDon/index'; 
 $route['api/getgiangvien'] = 'api/GetGiangVien/index'; 
 $route['api/getmakichhoat'] = 'api/GetMaKichHoat/index'; 
+$route['api/getketqua'] = 'api/GetKetQua/index'; 
+
 // checking
 
 $route['api/checkgiangvien'] = 'api/CheckGiangVien/index';
@@ -90,6 +92,7 @@ $route['api/insertketqua'] = 'api/InsertKetQua/index';
 $route['api/insertkhoahockhachhang'] = 'api/InsertKhoaHocKhachHang/index';
 $route['api/insertkhachhang'] = 'api/InsertKhachHang/index';
 $route['api/insertgiangvien'] = 'api/InsertGiangVien/index';
+$route['api/insertmakichhoat'] = 'api/InsertMaKichHoat/index';
 
 // update
 
@@ -98,3 +101,8 @@ $route['api/updatekhachhang'] = 'api/UpdateKhachHang/index';
 $route['api/updatetailieu'] = 'api/UpdateTaiLieu/index';
 $route['api/updatekhoahoc'] = 'api/UpdateKhoaHoc/index';
 $route['api/updategiangvien'] = 'api/UpdateGiangVien/index';
+$route['api/updatekhuyenmaikh'] = 'api/UpdateKhuyenMaiKH/index';
+$route['api/updatettgv'] = 'api/UpdateTTGV/index';
+$route['api/updatettkh'] = 'api/UpdateTTKH/index';
+$route['api/updatemakichhoat'] = 'api/UpdateMaKichHoat/index';
+$route['api/updatetthd'] = 'api/UpdateTTHD/index';

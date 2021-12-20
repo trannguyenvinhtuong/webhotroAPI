@@ -6,7 +6,7 @@ require(APPPATH . 'libraries/Format.php');
 
 use chriskacerguis\RestServer\RestController;
 
-class InsertKetQua extends RestController
+class UpdateKhuyenMaiKH extends RestController
 {
 
 	public function __construct()
@@ -33,23 +33,25 @@ class InsertKetQua extends RestController
 	        exit(0);
 	    }	
 		
-		$MaKH = $this->get('makh');
-	    $MaDe = $this->get('made');
-	    $Diem = $this->get('diem');
-	    $TenDe = $this->get('tende');
-	    $NgayLamBai = $this->get('ngaylambai');
+	    $makhoahoc = $this->get('makhoahoc');
+	    $tenkhuyenmai = $this->get('tenkhuyenmai');
+	    $phantramgiam = $this->get('phantramgiam');
+	    $ngaybatdau = $this->get('ngaybatdau');
+	    $ngayhethan = $this->get('ngayhethan');
+	    if($makhoahoc !== null && $tenkhuyenmai !== null && $phantramgiam !== null && $ngaybatdau !== null && $ngayhethan !== null){
+	    	$data = $this->M_DATA->updatedata('khuyenmaikhoahoc','TenKhuyenMai',$tenkhuyenmai,'MaKhoaHoc',$makhoahoc);
+	    	$data = $this->M_DATA->updatedata('khuyenmaikhoahoc','PhanTramGiam',$phantramgiam,'MaKhoaHoc',$makhoahoc);
+	    	$data = $this->M_DATA->updatedata('khuyenmaikhoahoc','NgayBatDau',$ngaybatdau,'MaKhoaHoc',$makhoahoc);
+	    	$data = $this->M_DATA->updatedata('khuyenmaikhoahoc','NgayHetHan',$ngayhethan,'MaKhoaHoc',$makhoahoc);
 
-	    $data = array(
-	    	'MaKH' => $MaKH,
-	    	'MaDe' => $MaDe,
-	    	'Diem' => $Diem,
-	    	'TenDe' => $TenDe,
-	    	'NgayLamBai' => $NgayLamBai
-	    );	    
-	   	$this->M_DATA->insertdata('ketqua',$data);
-	   	$insert_id = $this->db->insert_id();
-	   	$this->response($insert_id,200);
+	    	$this->response("sucess");
+		}
+		else{
+			$this->response("error");	
+		}
 	}
+
+
 }
 
 ?>

@@ -6,7 +6,7 @@ require(APPPATH . 'libraries/Format.php');
 
 use chriskacerguis\RestServer\RestController;
 
-class InsertKetQua extends RestController
+class UpdateMaKichHoat extends RestController
 {
 
 	public function __construct()
@@ -33,23 +33,18 @@ class InsertKetQua extends RestController
 	        exit(0);
 	    }	
 		
-		$MaKH = $this->get('makh');
-	    $MaDe = $this->get('made');
-	    $Diem = $this->get('diem');
-	    $TenDe = $this->get('tende');
-	    $NgayLamBai = $this->get('ngaylambai');
-
-	    $data = array(
-	    	'MaKH' => $MaKH,
-	    	'MaDe' => $MaDe,
-	    	'Diem' => $Diem,
-	    	'TenDe' => $TenDe,
-	    	'NgayLamBai' => $NgayLamBai
-	    );	    
-	   	$this->M_DATA->insertdata('ketqua',$data);
-	   	$insert_id = $this->db->insert_id();
-	   	$this->response($insert_id,200);
+	    $id = $this->get('id');	    
+	    $trangthai = $this->get('trangthai');
+	    if($id !== null && $trangthai !== null){
+	    	$this->M_DATA->updatedata('kichhoatkhoahoc','TrangThai',$trangthai,'Id',$id);
+	    	$this->response("sucess");
+		}
+		else{
+			$this->response("error");	
+		}
 	}
+
+
 }
 
 ?>
