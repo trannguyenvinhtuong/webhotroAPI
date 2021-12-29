@@ -41,7 +41,9 @@ class UpdateKhoaHoc extends RestController
 	    $macd = $this->get('macd');
 	    $macb = $this->get('macb');
 	    $anhkh = $this->get('anhkh');
+	    $AnhKH = 'https://drive.google.com/uc?export=view&id='.$anhkh.'';
 	    $videogt = $this->get('videogt');
+	    $VideoGT = 'https://www.youtube.com/embed/'.$videogt.'';
 	    $ngaydang = $this->get('ngaydang');
 	    $sohs = $this->get('sohs');
 	    $mar1 = $this->get('mar1');
@@ -60,8 +62,8 @@ class UpdateKhoaHoc extends RestController
 	    	$this->M_DATA->updatedata('khoahoc','MaGV',$magv,'MaKhoaHoc',$makh);
 	    	$this->M_DATA->updatedata('khoahoc','MaCD',$macd,'MaKhoaHoc',$makh);
 	    	$this->M_DATA->updatedata('khoahoc','MaCB',$macb,'MaKhoaHoc',$makh);
-	    	$this->M_DATA->updatedata('khoahoc','AnhKhoaHoc',$anhkh,'MaKhoaHoc',$makh);
-	    	$this->M_DATA->updatedata('khoahoc','VideoGT',$videogt,'MaKhoaHoc',$makh);
+	    	$this->M_DATA->updatedata('khoahoc','AnhKhoaHoc',$AnhKH,'MaKhoaHoc',$makh);
+	    	$this->M_DATA->updatedata('khoahoc','VideoGT',$VideoGT,'MaKhoaHoc',$makh);
 	    	$this->M_DATA->updatedata('khoahoc','NgayDang',$ngaydang,'MaKhoaHoc',$makh);
 	    	$this->M_DATA->updatedata('khoahoc','SoHS',$sohs,'MaKhoaHoc',$makh);
 	    	$this->M_DATA->updatedata('thongtinkhoahoc','Marketing1',$mar1,'MaKhoaHoc',$makh);

@@ -40,6 +40,7 @@ class InsertKhoaHoc extends RestController
 	    $GiaKH = $this->get('gia');
 	    $AnhKhoaHoc = $this->get('anh');
 	    $VideoGT = $this->get('video');
+	    $videogt = 'https://www.youtube.com/embed/'.$VideoGT.'';
 	    $MaGV = $this->get('magv');
 	    $NgayDang = $this->get('ngaydang');
 	    $GioiThieuKH = $this->get('gioithieu');
@@ -49,15 +50,15 @@ class InsertKhoaHoc extends RestController
 	    $Marketing4 = $this->get('dieu4');
 	    $Marketing5 = $this->get('dieu5');
 	    $Marketing6 = $this->get('dieu6');
-
+	    $anhkhoahoc = 'https://drive.google.com/uc?export=view&id='.$AnhKhoaHoc.'';
 	    $data = array(
 	    	'TenKhoaHoc' => $TenKhoaHoc,
 	    	'MaCD' => $MaCD,
 	    	'MaCB' => $MaCB,
 	    	'MoTa' => $MoTa,
 	    	'GiaKH' => $GiaKH,
-	    	'AnhKhoaHoc' => $AnhKhoaHoc,
-	    	'VideoGT' => $VideoGT,
+	    	'AnhKhoaHoc' => $anhkhoahoc,
+	    	'VideoGT' => $videogt,
 	    	'MaGV' => $MaGV,
 	    	'NgayDang' => $NgayDang
 	    );	    

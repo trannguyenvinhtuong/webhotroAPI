@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 20, 2021 lúc 02:30 PM
+-- Thời gian đã tạo: Th12 29, 2021 lúc 04:08 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -24,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `anhhocmay`
+--
+
+CREATE TABLE `anhhocmay` (
+  `ID` int(50) NOT NULL,
+  `MaKH` int(50) NOT NULL,
+  `LinkAnh1` varchar(100) NOT NULL,
+  `LinkAnh2` varchar(100) NOT NULL,
+  `LinkAnh3` varchar(100) NOT NULL,
+  `LinkAnh4` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `anhhocmay`
+--
+
+INSERT INTO `anhhocmay` (`ID`, `MaKH`, `LinkAnh1`, `LinkAnh2`, `LinkAnh3`, `LinkAnh4`) VALUES
+(1, 6, 'https://drive.google.com/thumbnail?id=1PzaWpXRJBxj8Zvms--A_Uzl0ZHPMx4dW', 'https://drive.google.com/thumbnail?id=1LB2_l8Trm72Pz5zxWRK5uS06_P393Doe', 'https://drive.google.com/thumbnail?id=1t53s-pQWyxljqTPOwlWEfuxNf7KELdxs', 'https://drive.google.com/thumbnail?id=1DD-4ntTLxRAgux12E8sJDb4hyEGq5FHN');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `capbac`
 --
 
@@ -39,8 +61,7 @@ CREATE TABLE `capbac` (
 INSERT INTO `capbac` (`MaCB`, `TenCB`) VALUES
 (1, 'Cấp 1'),
 (2, 'Cấp 2'),
-(3, 'Cấp 3'),
-(4, 'Đại học');
+(3, 'Cấp 3');
 
 -- --------------------------------------------------------
 
@@ -127,12 +148,11 @@ CREATE TABLE `giangvien` (
 --
 
 INSERT INTO `giangvien` (`MaGV`, `NoiCongTac`, `TrinhDo`, `KinhNghiem`, `GioiThieuBanThan`, `GioiThieuNgheNghiep`, `GioiThieuKinhNghiem`, `MaKH`, `MaCB`, `SoLuongHV`, `ChuyenNganh`, `SoLuongKH`, `TrangThai`) VALUES
-(2, 'Đại học công nghiệp thực phẩm TP.HCM', 'Thạc sĩ', 3, 'Giảng viên Đặng Trọng Khang là người có thâm niên đầu tư thực tế gần 15 năm trong thị trường chứng khoán', 'Người chia sẻ về Phương pháp đầu tư chứng khoán theo Luật Nhân Quả - Causality Investing', 'Chuyên gia chứng khoán tại NIK Capital. CEO CTCP Minh Bảo Tín. Trưởng VPDD Bình Dương - Cty chứng khoán Vietcombank (2016 - 2018). Từ 2014 đến nay, đã chia sẻ cho hơn 65.000 lượt người về đầu tư chứng khoán qua các khoá học kinh doanh \"đỉnh cao\". Là diễn giả về đầu tư cổ phiếu được đánh giá cao tại Việt Nam. Được mời đứng chung sân khấu với nhiều doanh nhân - diễn giả hàng đầu như Thầy John C.Maxwell, Thầy Mark Victor Hansen, Doanh nhân Phạm Đình Đoàn, Doanh nhân Đỗ Cao Bảo, Thầy Nguyễn Thành Tiến...', 6, 4, 500, 'Kinh tế', 21, 0),
-(3, 'o nha', '1', 1, 't gioi lam', '150', '150', 2, 4, 0, 'jj', 0, 0),
-(6, 'ko có ', 'ko có ', 0, 'ko có ', 'ko có ', 'ko có ', 3, 4, 0, '', 0, 0),
-(7, 'ko có ', 'ko có ', 0, 'ko có ', 'ko có ', 'ko có ', 4, 3, 0, '', 0, 0),
-(8, 'ko có ', 'ko có ', 0, 'ko có ', 'ko có ', 'ko có ', 5, 1, 0, 'ko có ', 0, 0),
-(12, 'q', 'q', 0, 'q', 'q', 'q', 1, 3, 0, 'q', 0, 0);
+(2, 'Đại học công nghiệp thực phẩm TP.HCM', 'Thạc sĩ', 3, 'Giảng viên Đặng Trọng Khang là người có thâm niên đầu tư thực tế gần 15 năm trong thị trường chứng khoán', 'Người chia sẻ về Phương pháp đầu tư chứng khoán theo Luật Nhân Quả - Causality Investing', 'Chuyên gia chứng khoán tại NIK Capital. CEO CTCP Minh Bảo Tín. Trưởng VPDD Bình Dương - Cty chứng khoán Vietcombank (2016 - 2018). Từ 2014 đến nay, đã chia sẻ cho hơn 65.000 lượt người về đầu tư chứng khoán qua các khoá học kinh doanh \"đỉnh cao\". Là diễn giả về đầu tư cổ phiếu được đánh giá cao tại Việt Nam. Được mời đứng chung sân khấu với nhiều doanh nhân - diễn giả hàng đầu như Thầy John C.Maxwell, Thầy Mark Victor Hansen, Doanh nhân Phạm Đình Đoàn, Doanh nhân Đỗ Cao Bảo, Thầy Nguyễn Thành Tiến...', 6, 3, 500, 'Kinh tế', 21, 0),
+(13, 'THPT Lý Thường Kiệt', 'Đại học', 4, 'tốt nghiệp trường Đại học Dược Hà Nội', 'từng làm việc trong các tập đoàn dược phẩm nổi tiếng của Bỉ ', 'đã gắn bó với việc dạy học trong hơn 10 năm qua. ', 13, 3, 0, 'Toán', 0, 0),
+(14, 'THCS Lê Quý Đôn', 'Đại học', 6, 'không chỉ cung cấp cho học sinh những kiến thức cốt lõi mà còn là chuyên gia tư vấn tâm lí cho các em học sinh trên khắp mọi miền tổ quốc', 'tốt nghiệp trường Đại học Khoa học Tự nhiên chuyên ngành Hóa học', 'từng là cán bộ nghiên cứu phòng Hóa sinh Protein – Viện Công nghệ Sinh học – Viện Khoa học và Công nghệ Việt Nam', 14, 3, 0, 'hoá học', 0, 0),
+(15, 'Tiểu Học Thị Trấn A', 'Cao Đẳng', 5, 'giáo viên tiểu học', 'dạy các môn toán, văn học cho trẻ từ lớp 5 trở xuống', 'đã có 5 năm kinh nghiệm trong ngành giáo dục trẻ em', 15, 1, 0, 'giáo dục', 0, 0),
+(16, 'THCS Lê Văn Tám', 'Đại Học', 2, 'Từng là giáo viên xuất sắc cấp tỉnh, tốt nghiệp đại học sư phạm', 'Giáo viên dạy vật lý cấp 2', 'có 4 năm trong nghề giáo', 16, 2, 0, 'Sư phạm toán', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -181,14 +201,17 @@ CREATE TABLE `ketqua` (
 
 INSERT INTO `ketqua` (`ID`, `MaKH`, `MaDe`, `Diem`, `TenDe`, `NgayLamBai`) VALUES
 (2, 1, 0, 9, 'Bài kiểm tra toán', '10-12-2020'),
-(3, 6, 0, 2, 'Bài kiểm tra toán', '1-2-2020'),
-(8, 6, 0, 0.5, 'Bài kiểm tra toán', '1-3-2021'),
+(3, 6, 0, 2, 'Bài kiểm tra toán', '01-02-2020'),
+(8, 6, 0, 9, 'Bài kiểm tra toán', '01-03-2021'),
 (13, 6, 0, 0, 'Bài kiểm tra toán', '12-12-2016'),
-(14, 1, 0, 0.2, 'Bài kiểm tra toán', ''),
-(15, 1, 0, 0.2, 'Bài kiểm tra toán', ''),
+(14, 1, 0, 0.2, 'Bài kiểm tra toán', '01-10-2018'),
+(15, 1, 0, 0.2, 'Bài kiểm tra toán', '05-12-2019'),
 (18, 1, 0, 0.4, 'Bài kiểm tra toán', '19-12-2021'),
 (19, 1, 0, 0.2, 'Bài kiểm tra toán', '20-12-2021'),
-(20, 1, 0, 0.6, 'Bài kiểm tra toán', '20-12-2021');
+(20, 1, 0, 0.6, 'Bài kiểm tra toán', '20-12-2021'),
+(21, 6, 0, 1, 'Bài kiểm tra toán', '23-12-2021'),
+(22, 6, 0, 9, 'Bài kiểm tra toán', '23-12-2021'),
+(23, 6, 0, 9, 'Bài kiểm tra toán', '23-12-2021');
 
 -- --------------------------------------------------------
 
@@ -223,7 +246,11 @@ INSERT INTO `khachhang` (`MaKH`, `TenKH`, `SDT`, `DiaChi`, `Email`, `AnhDaiDien`
 (9, 'testing', '0299', 'abc', '123', 'https://drive.google.com/uc?export=view&id=1JTdABYFaasXQNlOk9sPatLw6A2AwPkIl', 'toitestdo', '1111', 0),
 (10, 'adminday', '123', 'cos', '111', 'https://drive.google.com/uc?export=view&id=1JTdABYFaasXQNlOk9sPatLw6A2AwPkIl', 'admintest', '1234', 0),
 (11, 'testAdmin', '1111', '111', 'test', 'https://drive.google.com/uc?export=view&id=1JTdABYFaasXQNlOk9sPatLw6A2AwPkIl', 'toi la test', '1234', 0),
-(12, 'abcxyz', '1990000', '190000', 'abc', 'https://drive.google.com/uc?export=view&id=1JTdABYFaasXQNlOk9sPatLw6A2AwPkIl', 'abcxyz', '1234', 0);
+(12, 'abcxyz', '1990000', '190000', 'abc', 'https://drive.google.com/uc?export=view&id=1JTdABYFaasXQNlOk9sPatLw6A2AwPkIl', 'abcxyz', '1234', 0),
+(13, 'Trần Văn Quang', '093597531', '73 Lý Triện', 'quang@gmail.com', 'https://drive.google.com/uc?export=view&id=1fSHHHtOOj37Tn6m93wo36fq3TQoio5s-', 'toilaquang', '1234', 0),
+(14, 'Lê Phan Trung Kiên', '098564715', '8 Lê Thánh Tôn', 'kien1109@gmail.com', 'https://drive.google.com/uc?export=view&id=1JTdABYFaasXQNlOk9sPatLw6A2AwPkIl', 'toilakien', '1234', 0),
+(15, 'Trần Đại Minh', '0968743969', '921/1 Dương Văn Dương', 'minh@gmail.com', 'https://drive.google.com/uc?export=view&id=1JTdABYFaasXQNlOk9sPatLw6A2AwPkIl', 'toilaminh', '1234', 0),
+(16, 'Đặng Tiểu Khải', '09355476154', '89 Nguyễn Thị Minh Khai', 'khai@gmail.com', 'https://drive.google.com/uc?export=view&id=1JTdABYFaasXQNlOk9sPatLw6A2AwPkIl', 'toilakhai', '1234', 0);
 
 -- --------------------------------------------------------
 
@@ -250,9 +277,15 @@ CREATE TABLE `khoahoc` (
 --
 
 INSERT INTO `khoahoc` (`MaKhoaHoc`, `TenKhoaHoc`, `MoTa`, `GiaKH`, `MaGV`, `MaCD`, `MaCB`, `AnhKhoaHoc`, `VideoGT`, `NgayDang`, `SoHS`) VALUES
-(1, 'Nhập môn chứng khoán ', 'Khóa học chứng khoán online giúp bạn nắm bắt được kiến thức đầu tư chứng khoán đầy đủ, bài bản và chi tiết nhất dành cho người mới bắt đầu tham gia. Bí quyết để nhanh chóng có được nguồn lợi nhuận khổng lồ từ thị trường chứng khoán', 600000, 2, 10, 4, 'https://drive.google.com/uc?export=view&id=1EcgScoMrzeav4SsDvTVwdoxtqc_qpICy', 'https://drive.google.com/file/d/14FBeyyVtrOtu5BjxKb2g66GGtMeUQiXa/preview\r\n', '2021-10-01', 30),
-(2, 'Tự do tài chính cùng chứng khoán', 'Khoá học đầu tư tài chính đến từ nhà đầu tư Đặng Trọng Khang \"Tự do tài chính cùng chứng khoán\" giúp bạn tránh được những rủi ro, cạm bẫy để tăng thu nhập nhờ chứng khoán', 900000, 2, 10, 4, 'https://drive.google.com/uc?export=view&id=1Z4ity_GJ_8GgbNQClkfdr0LnpV3go3Pr', 'https://drive.google.com/file/d/1_SQgruCQ-4QOOqKcg-aV6guODOjYsmLu/preview', '2021-10-01', 30),
-(29, 'Test thôi nhé cais nayf ben admin', 'qwq', 123, 2, 1, 1, 'qw', 'qwq', '7-12-2021', 0);
+(1, 'Nhập môn chứng khoán ', 'Khóa học chứng khoán online giúp bạn nắm bắt được kiến thức đầu tư chứng khoán đầy đủ, bài bản và chi tiết nhất dành cho người mới bắt đầu tham gia. Bí quyết để nhanh chóng có được nguồn lợi nhuận khổng lồ từ thị trường chứng khoán', 600000, 2, 10, 3, 'https://drive.google.com/uc?export=view&id=1EcgScoMrzeav4SsDvTVwdoxtqc_qpICy', 'https://drive.google.com/file/d/14FBeyyVtrOtu5BjxKb2g66GGtMeUQiXa/preview\r\n', '2021-10-01', 30),
+(2, 'Tự do tài chính cùng chứng khoán', 'Khoá học đầu tư tài chính đến từ nhà đầu tư Đặng Trọng Khang \"Tự do tài chính cùng chứng khoán\" giúp bạn tránh được những rủi ro, cạm bẫy để tăng thu nhập nhờ chứng khoán', 900000, 2, 10, 3, 'https://drive.google.com/uc?export=view&id=1Z4ity_GJ_8GgbNQClkfdr0LnpV3go3Pr', 'https://drive.google.com/file/d/1_SQgruCQ-4QOOqKcg-aV6guODOjYsmLu/preview', '2021-10-01', 30),
+(30, 'Phương pháp học tốt môn toán lớp 12', 'Sẽ giúp các em nắm bắt các kiến thức cơ bản và nâng cao một  cách nhanh nhất . Từ đó giúp các em có một nền tảng kiến thức vững chắc để phát triển tư duy và trí tuệ và giúp các em đạt được những ước mơ của riêng mình . Chúc các em thành công.', 500000, 13, 1, 3, 'https://drive.google.com/uc?export=view&id=1RSAQs9t7bhF_LUwIYpGwhOtS8obGFDZb', 'https://www.youtube.com/embed/k3sEuAF_hUA', '28-12-2021', 0),
+(31, 'Ôn luyện Hoá Học 11', 'Khoá học sẽ giúp các em ôn luyện tốt môn Hoá Học trong các kỳ thi sắp tới.', 200000, 14, 12, 3, 'https://drive.google.com/uc?export=view&id=1FsWh6Cj9y5DQpLwzQCk5gM8cusvyLRs1', 'https://www.youtube.com/embed/Df36vOSzVMM', '28-12-2021', 0),
+(32, 'Luyện chữ đẹp', 'Khoá học sẽ giúp các em nắm vững căn bản của chữ cái Việt Nam, đồng thời luyện nét chữ đẹp cho các em', 100000, 15, 2, 1, 'https://drive.google.com/uc?export=view&id=1rSuT1La-m2S_Je0fDMry6JbG2eTAhxxi', 'https://www.youtube.com/embed/2LBv_9oZ1qY', '28-12-2021', 0),
+(33, 'Vật lý lớp 9', 'Sẽ giúp các em nắm bắt các kiến thức cơ bản và nâng cao một  cách nhanh nhất . Từ đó giúp các em có một nền tảng kiến thức vững chắc để phát triển tư duy và trí tuệ và giúp các em đạt được những ước mơ của riêng mình', 400000, 16, 3, 2, 'https://drive.google.com/uc?export=view&id=1cjhAe6BuZuxQaW9Ohbl-2iylTows_KCq', 'https://www.youtube.com/embed/TIcXImhQnSM', '28-12-2021', 0),
+(34, 'Hoá học lớp 8', 'Ôn luyện kiến thức hoá học lớp 8', 100000, 16, 12, 2, 'https://drive.google.com/uc?export=view&id=1zXCE-THI4M13ssGKSfTg6NBlhbe91aB5', 'https://www.youtube.com/embed/b4zUlCYaMBE', '28-12-2021', 0),
+(35, 'Sinh học 9', 'Ôn luyện kiến thức sinh học', 400000, 16, 5, 2, 'https://drive.google.com/uc?export=view&id=11Xk0N812hXgAIRz14qkOkXrbFiJzB-Dd', 'https://www.youtube.com/embed/0o4EY8QIZsg', '28-12-2021', 0),
+(36, 'Ôn tập toán lớp 8', 'Ôn tập các kiến thức toán lớp 8', 300000, 16, 1, 2, 'https://drive.google.com/uc?export=view&id=1qo8L5oBkTe-IHBDjpb77L56uJM3bJYPf', 'https://www.youtube.com/embed/nxhu6WxOe3I', '28-12-2021', 0);
 
 -- --------------------------------------------------------
 
@@ -274,8 +307,8 @@ CREATE TABLE `khoahoccuakh` (
 INSERT INTO `khoahoccuakh` (`ID`, `MaKH`, `MaKhoaHoc`, `NgayThamGia`) VALUES
 (1, 1, 1, '10-10-2021'),
 (2, 1, 2, '9-9-2021'),
-(3, 1, 1, '18-11-2021'),
-(6, 6, 1, '9-5-2021');
+(6, 6, 1, '9-5-2021'),
+(8, 6, 2, '22-12-2021');
 
 -- --------------------------------------------------------
 
@@ -298,7 +331,13 @@ CREATE TABLE `khuyenmaikhoahoc` (
 INSERT INTO `khuyenmaikhoahoc` (`MaKhoaHoc`, `TenKhuyenMai`, `PhanTramGiam`, `NgayBatDau`, `NgayHetHan`) VALUES
 (1, 'Gỉam giá', 70, '2021-10-07', '2021-10-21'),
 (2, 'Gỉam giá', 20, '2021-10-07', '2021-10-17'),
-(29, '1', 1, '4/12/2021', '1');
+(30, 'chuaco', 0, '02-12-2021', '02-12-2021'),
+(31, 'chuaco', 0, '02-12-2021', '02-12-2021'),
+(32, 'chuaco', 0, '02-12-2021', '02-12-2021'),
+(33, 'chuaco', 0, '02-12-2021', '02-12-2021'),
+(34, 'chuaco', 0, '02-12-2021', '02-12-2021'),
+(35, 'chuaco', 0, '02-12-2021', '02-12-2021'),
+(36, 'chuaco', 0, '02-12-2021', '02-12-2021');
 
 -- --------------------------------------------------------
 
@@ -319,8 +358,7 @@ CREATE TABLE `khuyenmaitailieu` (
 --
 
 INSERT INTO `khuyenmaitailieu` (`MaTL`, `TenKhuyenMai`, `PhanTramGiam`, `NgayBatDau`, `NgayHetHan`) VALUES
-(1, 'Giảm giá', 30, '2021-10-07', '2021-10-20'),
-(3, 'Test', 0, '0000-00-00', '0000-00-00');
+(1, 'Giảm giá', 30, '2021-10-07', '2021-10-20');
 
 -- --------------------------------------------------------
 
@@ -373,8 +411,15 @@ CREATE TABLE `luutrutailieu` (
 --
 
 INSERT INTO `luutrutailieu` (`MaTL`, `Link`) VALUES
-(1, 'https://drive.google.com/uc?export=view&id=1Ucdpo0mhEj8yUsHiapoXGo2KR0U2mhyU'),
-(3, '1');
+(1, 'https://drive.google.com/file/d/1Ucdpo0mhEj8yUsHiapoXGo2KR0U2mhyU/preview'),
+(29, 'https://drive.google.com/file/d/1e5Ih6_tcjLTJ9betyS8IhQGVcDK9TSEV/preview'),
+(30, 'https://drive.google.com/file/d/11aw6WeBd9x0EAp_saobi_zmckoh3YKEJ/preview'),
+(31, 'https://drive.google.com/file/d/1ERDZsNWpBOiiYhFHl7fRGLQ-9smwr-tW/preview'),
+(32, 'https://drive.google.com/file/d/1Axj36530WfWHZLtGnKNnL30ErhaL8Gpj/preview'),
+(33, 'https://drive.google.com/file/d/1MzmHosa0811oezA7QBg8fu1iNKtNGIkT/preview'),
+(34, 'https://drive.google.com/file/d/1KreCkInNkCeJ-77DOjiupGMYNN5hrw8K/preview'),
+(35, 'https://drive.google.com/file/d/13vRrD8uxcKK6ky2z0ER-irDr3tQ4F7oM/preview'),
+(36, 'https://drive.google.com/file/d/1tVOGSmC4k0P2Svs3vgwsMYLGHOT58SwN/preview');
 
 -- --------------------------------------------------------
 
@@ -390,8 +435,8 @@ CREATE TABLE `tailieu` (
   `MaCB` int(50) NOT NULL,
   `MaCD` int(50) NOT NULL,
   `GiaTL` bigint(20) NOT NULL,
-  `AnhTL` varchar(100) NOT NULL,
-  `Demo` varchar(100) NOT NULL,
+  `AnhTL` varchar(1000) NOT NULL,
+  `Demo` varchar(1000) NOT NULL,
   `SoTrang` int(50) NOT NULL,
   `NgayDang` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -401,9 +446,15 @@ CREATE TABLE `tailieu` (
 --
 
 INSERT INTO `tailieu` (`MaTL`, `TenTL`, `MoTa`, `MaGV`, `MaCB`, `MaCD`, `GiaTL`, `AnhTL`, `Demo`, `SoTrang`, `NgayDang`) VALUES
-(1, 'Yêu cầu đề tài', 'Máy điều chỉnh cảm ứng là một máy biến áp có hai dây quấn được đặt trên hai phần riêng biệt của lõi thép, hai phần này có thể quay hoặc dịch chuyển vị trí tương đối với nhau. Máy điều chỉnh cảm ứng thường được cấu tạo như động cơ không đồng bộ một dây quấn được đặt ở phần Stato, phần Roto được đặt dây quấn thứ hai, chuyển động tương đối của Rôto và Stato thực hiện qua bộ truyền trục vít. Máy điều chỉnh cảm ứng ba pha có dây quấn ba pha tương tự như dây quấn Stato và dây quấn Roto của động cơ điện không đồng bộ ba pha Roto dây quấn', 2, 4, 7, 500000, 'https://drive.google.com/uc?export=view&id=1-ejWK_x0gzYVmB53K-c9eTXqzMyjQaLB', 'https://drive.google.com/uc?export=view&id=1Ucdpo0mhEj8yUsHiapoXGo2KR0U2mhyU', 20, ''),
-(2, 'test', 'chỉ là test thôi', 2, 4, 7, 12000, 'chua co', 'chuaup', 20, 'homnay'),
-(3, 'Test', '1', 2, 3, 5, 1, '1', '1', 1000, '7-12-2021');
+(1, 'Yêu cầu đề tài', 'Máy điều chỉnh cảm ứng là một máy biến áp có hai dây quấn được đặt trên hai phần riêng biệt của lõi thép, hai phần này có thể quay hoặc dịch chuyển vị trí tương đối với nhau. Máy điều chỉnh cảm ứng thường được cấu tạo như động cơ không đồng bộ một dây quấn được đặt ở phần Stato, phần Roto được đặt dây quấn thứ hai, chuyển động tương đối của Rôto và Stato thực hiện qua bộ truyền trục vít. Máy điều chỉnh cảm ứng ba pha có dây quấn ba pha tương tự như dây quấn Stato và dây quấn Roto của động cơ điện không đồng bộ ba pha Roto dây quấn', 2, 3, 7, 0, 'https://drive.google.com/uc?export=view&id=1-ejWK_x0gzYVmB53K-c9eTXqzMyjQaLB', 'https://drive.google.com/file/d/1Ucdpo0mhEj8yUsHiapoXGo2KR0U2mhyU/preview', 20, ''),
+(29, 'Tài liệu tự ôn tập logaric', 'Tài liệu sẽ giúp bạn ôn luyện các kỳ thy dễ dàng', 14, 3, 1, 0, 'https://drive.google.com/uc?export=view&id=1GfxxHRQPwF3V-hoak6n3e4iQlGdgqdu_', 'https://drive.google.com/file/d/1e5Ih6_tcjLTJ9betyS8IhQGVcDK9TSEV/preview', 50, '27-12-2021'),
+(30, 'Học tốt hoá học 8', 'Tài liệu sẽ giúp các em học tốt môn hoá lớp 8', 16, 2, 12, 0, 'https://drive.google.com/uc?export=view&id=1GfxxHRQPwF3V-hoak6n3e4iQlGdgqdu_', 'https://drive.google.com/file/d/11aw6WeBd9x0EAp_saobi_zmckoh3YKEJ/preview', 20, '28-12-2021'),
+(31, 'Đề thi thử toán THPT Quốc Học Huế', 'Tài liệu bao gồm đề thi thử THPT', 16, 3, 1, 0, 'https://drive.google.com/uc?export=view&id=1GfxxHRQPwF3V-hoak6n3e4iQlGdgqdu_', 'https://drive.google.com/file/d/1ERDZsNWpBOiiYhFHl7fRGLQ-9smwr-tW/preview', 30, '28-12-2021'),
+(32, 'Tài liệu thi thử Toán THPT Chuyên Thái Bình', 'Tài liệu bao gồm đề thi thử THPT ', 16, 3, 1, 0, 'https://drive.google.com/uc?export=view&id=1GfxxHRQPwF3V-hoak6n3e4iQlGdgqdu_', 'https://drive.google.com/file/d/1Axj36530WfWHZLtGnKNnL30ErhaL8Gpj/preview', 25, '28-12-2021'),
+(33, 'Đề thi toán các năm', 'Tài liệu bao gồm các đề thi toán', 16, 3, 1, 0, 'https://drive.google.com/uc?export=view&id=1GfxxHRQPwF3V-hoak6n3e4iQlGdgqdu_', 'https://drive.google.com/file/d/1MzmHosa0811oezA7QBg8fu1iNKtNGIkT/preview', 30, '28-12-2021'),
+(34, 'Tổng hợp các công thức hoá học', 'Tài liệu tổng hợp các công thức hoá học', 16, 3, 12, 0, 'https://drive.google.com/uc?export=view&id=1GfxxHRQPwF3V-hoak6n3e4iQlGdgqdu_', 'https://drive.google.com/file/d/1KreCkInNkCeJ-77DOjiupGMYNN5hrw8K/preview', 34, '28-12-2021'),
+(35, 'Đề thi thử toán THPT Yên Lạc', 'Tài liệu bao gồm các đề thi thử môn toán', 16, 3, 1, 0, 'https://drive.google.com/uc?export=view&id=1GfxxHRQPwF3V-hoak6n3e4iQlGdgqdu_', 'https://drive.google.com/file/d/13vRrD8uxcKK6ky2z0ER-irDr3tQ4F7oM/preview', 15, '28-12-2021'),
+(36, 'Bài tập về Ankan', 'Tài liệu về Ankan', 16, 2, 12, 0, 'https://drive.google.com/uc?export=view&id=1GfxxHRQPwF3V-hoak6n3e4iQlGdgqdu_', 'https://drive.google.com/file/d/1tVOGSmC4k0P2Svs3vgwsMYLGHOT58SwN/preview', 15, '28-12-2021');
 
 -- --------------------------------------------------------
 
@@ -448,11 +499,24 @@ CREATE TABLE `thongtinkhoahoc` (
 INSERT INTO `thongtinkhoahoc` (`MaKhoaHoc`, `Marketing1`, `Marketing2`, `Marketing3`, `Marketing4`, `Marketing5`, `Marketing6`, `GioiThieuKH`) VALUES
 (1, 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Thị trường chứng khoán và vai trò của TTCK <br> Thị trường chứng khoán (TTCK) là nơi diễn ra các hoạt động giao dịch mua bán, trao đổi các loại chứng khoán khác nhau giữa người chủ sở hữu với người mua. Thực chất việc thay đổi chủ sở hữu cổ phiếu (chứng khoán) chính là quá trình vận động của tư bản chuyển từ tư bản sở hữu sang tư bản kinh doanh.\r\n<br />\r\nThị trường chứng khoán Việt Nam đang ngày càng phát triển và trở thành lĩnh vực đầu tư vô cùng hấp dẫn, nhất là đối với những người trẻ và người có thu nhập khá trở lên. Tiềm năng thị trường vô cùng lớn hứa hẹn những khoản lợi nhuận khổng lồ mà nhưng cũng tiềm ẩn không ít rủi ro nếu như không biết cách đánh giá và đầu tư chính xác, khách quan. Nhận thấy tiềm năng phát triển đầy hứa hẹn nên rất nhiều người kéo nhau đi học kinh doanh chứng khoán cơ bản xây dựng nền tảng cá nhân vững chắc.\r\n<br />\r\nĐó là lý do vì sao khóa học đầu tư chứng khoán \"Nhập môn chứng khoán\" được ra đời nhằm giúp bạn có thể trở thành một nhà đầu tư chứng khoán với khả năng thu về lợi nhuận khổng lồ từ TTCK.\r\n<br/>\r\nKhóa học \"Nhập môn chứng khoán\" là khóa học trực tuyến cơ bản dành cho người mới bắt đầu mới tìm hiểu về chứng khoán và học đầu tư chứng khoán tại nhà do giảng viên - Chuyên gia chứng khoán Đặng Trọng Khang hướng dẫn.\r\n<br />\r\nKhóa học chứng khoán online đến từ chuyên gia Đặng Trọng Khang sẽ giúp bạn:\r\n<br />\r\n<i class=\"fas fa-check\"></i> Có được một cái nhìn tổng quan nhất về thị trường chứng khoán Việt Nam hiện nay, học chứng khoán cơ bản về tiềm năng lợi nhuận khổng lồ từ kênh thị trường này\r\n<br />\r\n<i class=\"fas fa-check\"></i> Có được 7 tư duy đúng về đầu tư chứng khoán, củng cố những phẩm chất sáng suốt, tinh thần trách nhiệm, sự rõ ràng, tính khách quan và sự liều lĩnh cần thiết\r\n<br />\r\n<i class=\"fas fa-check\"></i> Khoá học đầu tư chứng khoán giúp bạn nắm được 4 công cụ kiếm tiền tốt nhất ngày nay để bạn tự mình mở ra những cơ hội kiếm tiền mới\r\n<br />\r\n<i class=\"fas fa-check\"></i> Những kỹ năng, bí quyết và mẹo để bạn xử lý những vấn đề thường gặp của nhà đầu tư hiện nay: cách đọc bảng giá, cách giao dịch, cách thanh toán giao dịch, cách nội tiền, cách rút tiền, cách khắc phục rủi ro thua lỗ...\r\n<br />\r\n<i class=\"fas fa-check\"></i> Những định hướng đầu tư trong thời gian dài hạn, trung hạn dành cho bạn\r\n<br />\r\nHãy tham gia ngay khóa học chứng khoán online \"Nhập môn chứng khoán\" để trở thành nhà đầu tư chứng khoán thông minh và giàu có !\r\n'),
 (2, 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Kiến thức cơ bản nhất về thị trường chứng khoán, về đầu tư chứng khoán và tiềm năng', 'Thị trường chứng khoán và vai trò của TTCK &nbsp Thị trường chứng khoán (TTCK) là nơi diễn ra các hoạt động giao dịch mua bán, trao đổi các loại chứng khoán khác nhau giữa người chủ sở hữu với người mua. Thực chất việc thay đổi chủ sở hữu cổ phiếu (chứng khoán) chính là quá trình vận động của tư bản chuyển từ tư bản sở hữu sang tư bản kinh doanh.\r\n<br />\r\nThị trường chứng khoán Việt Nam đang ngày càng phát triển và trở thành lĩnh vực đầu tư vô cùng hấp dẫn, nhất là đối với những người trẻ và người có thu nhập khá trở lên. Tiềm năng thị trường vô cùng lớn hứa hẹn những khoản lợi nhuận khổng lồ mà nhưng cũng tiềm ẩn không ít rủi ro nếu như không biết cách đánh giá và đầu tư chính xác, khách quan. Nhận thấy tiềm năng phát triển đầy hứa hẹn nên rất nhiều người kéo nhau đi học kinh doanh chứng khoán cơ bản xây dựng nền tảng cá nhân vững chắc.\r\n<br />\r\nĐó là lý do vì sao khóa học đầu tư chứng khoán \"Nhập môn chứng khoán\" được ra đời nhằm giúp bạn có thể trở thành một nhà đầu tư chứng khoán với khả năng thu về lợi nhuận khổng lồ từ TTCK.\r\n<br/>\r\nKhóa học \"Nhập môn chứng khoán\" là khóa học trực tuyến cơ bản dành cho người mới bắt đầu mới tìm hiểu về chứng khoán và học đầu tư chứng khoán tại nhà do giảng viên - Chuyên gia chứng khoán Đặng Trọng Khang hướng dẫn.\r\n<br />\r\nKhóa học chứng khoán online đến từ chuyên gia Đặng Trọng Khang sẽ giúp bạn:\r\n<br />\r\n<i class=\"fas fa-check\"></i> Có được một cái nhìn tổng quan nhất về thị trường chứng khoán Việt Nam hiện nay, học chứng khoán cơ bản về tiềm năng lợi nhuận khổng lồ từ kênh thị trường này\r\n<br />\r\n<i class=\"fas fa-check\"></i> Có được 7 tư duy đúng về đầu tư chứng khoán, củng cố những phẩm chất sáng suốt, tinh thần trách nhiệm, sự rõ ràng, tính khách quan và sự liều lĩnh cần thiết\r\n<br />\r\n<i class=\"fas fa-check\"></i> Khoá học đầu tư chứng khoán giúp bạn nắm được 4 công cụ kiếm tiền tốt nhất ngày nay để bạn tự mình mở ra những cơ hội kiếm tiền mới\r\n<br />\r\n<i class=\"fas fa-check\"></i> Những kỹ năng, bí quyết và mẹo để bạn xử lý những vấn đề thường gặp của nhà đầu tư hiện nay: cách đọc bảng giá, cách giao dịch, cách thanh toán giao dịch, cách nội tiền, cách rút tiền, cách khắc phục rủi ro thua lỗ...\r\n<br />\r\n<i class=\"fas fa-check\"></i> Những định hướng đầu tư trong thời gian dài hạn, trung hạn dành cho bạn\r\n<br />\r\nHãy tham gia ngay khóa học chứng khoán online \"Nhập môn chứng khoán\" để trở thành nhà đầu tư chứng khoán thông minh và giàu có !\r\n'),
-(29, 'aas', 'asa', 's', 's', 'sa', 'undefined', 'qwabc');
+(30, 'Kỹ năng giải đề', 'Cách học tốt môn Toán', 'Kỹ năng giải quyết vấn đề', 'Cách ôn luyện tốt cho các kỳ thi', 'Kinh nghiệm giải bài trắc nghiệm nhanh', 'Các kỹ năng và kinh nghiệm sống', 'Chia sẽ kinh nghiệm học tốt môn Toán, đồng thời ôn luyện giải các đề toán hot nhất hiện nay.'),
+(31, 'Kỹ năng giải đề nhanh', 'Tổng hợp kiến thức nhanh gọn ', 'Giúp ôn luyện cho kỳ thi học kỳ tốt hơn', 'Nắm kỹ kiến thức cơ bản', 'Chuẩn bị cho kỳ thi THPT quốc gia', 'Nắm kỹ hoá hữu cơ và vô cơ', 'Khoá học sẽ ôn luyện lại các kiến thức học kỳ I của hoá học 11, giúp các em hoàn thành tốt bài thi sắp tới'),
+(32, '', '', '', '', '', '', ''),
+(33, 'Nắm kỹ vật lý THCS', 'Có tư duy về vật lý', 'Học tốt vật lý các cấp cao hơn', 'Rèn luyện kỹ năng tự học', 'Nẵm vững cơ bản', 'undefined', 'Khoá học tổng kết kiến thức vật lý lớp 9 cũng như toàn bộ kiến thức vật lý THCS'),
+(34, 'Làm quen với hoá học', 'Nắm vững căn bản', 'Làm tiền đề cho kiến thức cao hơn', 'Nắm vững sơ khai hoá học', 'Dễ dàng học ', 'undefined', 'Ôn luyện kiến thức cho các em học sinh lớp 8'),
+(35, 'Nắm vững kiến thức', 'Luyện tập kỹ năng giải đề', 'Chuẩn bị kiến thức cho học sinh thi chuyên', 'Luyện tập kỹ năng tự học', 'Dễ dàng làm quen với kiến thức nâng cao', 'undefined', 'Luyện tập bài tập và ôn luyện kiến thức sinh học 9'),
+(36, 'Ôn tập kiến thức lớp 8', 'Chuẩn bị tốt cho kỳ thi học kỳ', 'Nắm vững nền tảng ', 'Dễ dàng học các kiến thức cao hơn', 'Luyện kỹ năng giải đề', 'undefined', 'Ôn tập các kiến thức toán lớp 8');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `anhhocmay`
+--
+ALTER TABLE `anhhocmay`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `FK_MaKH_AI` (`MaKH`);
 
 --
 -- Chỉ mục cho bảng `capbac`
@@ -578,6 +642,12 @@ ALTER TABLE `thongtinkhoahoc`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `anhhocmay`
+--
+ALTER TABLE `anhhocmay`
+  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT cho bảng `capbac`
 --
 ALTER TABLE `capbac`
@@ -599,7 +669,7 @@ ALTER TABLE `chude`
 -- AUTO_INCREMENT cho bảng `giangvien`
 --
 ALTER TABLE `giangvien`
-  MODIFY `MaGV` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `MaGV` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `hoadon`
@@ -611,25 +681,25 @@ ALTER TABLE `hoadon`
 -- AUTO_INCREMENT cho bảng `ketqua`
 --
 ALTER TABLE `ketqua`
-  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `MaKH` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `MaKH` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `khoahoc`
 --
 ALTER TABLE `khoahoc`
-  MODIFY `MaKhoaHoc` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `MaKhoaHoc` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT cho bảng `khoahoccuakh`
 --
 ALTER TABLE `khoahoccuakh`
-  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `kichhoatkhoahoc`
@@ -641,7 +711,7 @@ ALTER TABLE `kichhoatkhoahoc`
 -- AUTO_INCREMENT cho bảng `tailieu`
 --
 ALTER TABLE `tailieu`
-  MODIFY `MaTL` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `MaTL` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT cho bảng `tailieucuakh`
@@ -652,6 +722,12 @@ ALTER TABLE `tailieucuakh`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `anhhocmay`
+--
+ALTER TABLE `anhhocmay`
+  ADD CONSTRAINT `FK_MaKH_AI` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`);
 
 --
 -- Các ràng buộc cho bảng `chitiethoahon`

@@ -75,6 +75,7 @@ $route['api/gethoadon'] = 'api/GetHoaDon/index';
 $route['api/getgiangvien'] = 'api/GetGiangVien/index'; 
 $route['api/getmakichhoat'] = 'api/GetMaKichHoat/index'; 
 $route['api/getketqua'] = 'api/GetKetQua/index'; 
+$route['api/getanhkh'] = 'api/GetAnhKH/index'; 
 
 // checking
 

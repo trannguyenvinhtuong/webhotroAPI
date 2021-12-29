@@ -38,11 +38,14 @@ class UpdateKhachHang extends RestController
 	    $sdt = $this->get('sdt');
 	    $diachi = $this->get('diachi');
 	    $email = $this->get('email');
-	    if($makh !== null && $tenkh !== null && $sdt !== null && $diachi !== null && $email !== null){
+	    $anhdaidien = $this->get('anhdaidien');
+	    $AnhDaiDienN = 'https://drive.google.com/uc?export=view&id='.$anhdaidien.'';
+	    if($makh !== null && $tenkh !== null && $sdt !== null && $diachi !== null && $email !== null && $anhdaidien !== null){
 	    	$this->M_DATA->updatedata('khachhang','TenKH',$tenkh,'MaKH',$makh);
 	    	$this->M_DATA->updatedata('khachhang','SDT',$sdt,'MaKH',$makh);
 	    	$this->M_DATA->updatedata('khachhang','DiaChi',$diachi,'MaKH',$makh);
 	    	$this->M_DATA->updatedata('khachhang','Email',$email,'MaKH',$makh);
+	    	$this->M_DATA->updatedata('khachhang','AnhDaiDien',$AnhDaiDienN,'MaKH',$makh);
 	    	$this->response("sucess");
 		}
 		else{

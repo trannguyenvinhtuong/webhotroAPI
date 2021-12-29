@@ -6,7 +6,7 @@ require(APPPATH . 'libraries/Format.php');
 
 use chriskacerguis\RestServer\RestController;
 
-class CheckGiangVien extends RestController
+class GetAnhKH extends RestController
 {
 
 	public function __construct()
@@ -31,15 +31,14 @@ class CheckGiangVien extends RestController
 	            header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
 	    
 	        exit(0);
-	    }	
-	    $idkh = $this->get('idkh');
-	    if($idkh !== null){
-	    	$data = $this->M_DATA->load_data('*','giangvien,khachhang','giangvien.MaKH=khachhang.MaKH and giangvien.MaKH = '.$idkh.'');
-	    	$this->response($data, 200);
-	    }	
-	    else{
-	    	$this->response(error);	
-	    }	    
+	    }		
+		
+		$data = $this->M_DATA->load_alldata('*','anhhocmay');
+		$this->response($data,200);			
+			
 	}
+
+
 }
+
 ?>

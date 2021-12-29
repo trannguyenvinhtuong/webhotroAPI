@@ -43,21 +43,34 @@ class InsertTaiLieu extends RestController
 	    $Demo = $this->get('demo');
 	    $SoTrang = $this->get('sotrang');
 	    $NgayDang = $this->get('ngaydang');
-
+	    
+	    $AnhTLNew = 'https://drive.google.com/uc?export=view&id='.$AnhTL.'';
 	    $data = array(
 	    	'TenTL' => $TenTL,
 	    	'MaCD' => $MaCD,
 	    	'MaCB' => $MaCB,
 	    	'MoTa' => $MoTa,
 	    	'GiaTL' => $GiaTL,
-	    	'AnhTL' => $AnhTL,
+	    	'AnhTL' => $AnhTLNew,
 	    	'Demo' => $Demo,
 	    	'MaGV' => $MaGV,
 	    	'SoTrang' => $SoTrang,
 	    	'NgayDang' => $NgayDang
 	    );	    
-	   	$this->M_DATA->insertdata('tailieu',$data);
-	   	$insert_id = $this->db->insert_id();
+	    $this->M_DATA->insertdata('tailieu',$data);
+	    $insert_id = $this->db->insert_id();
+	    $MaTL = $insert_id;
+		$Link = $this->get('link');
+	    
+
+	    $dataluutru = array(
+	    	'MaTL' => $MaTL,
+	    	'Link' => $Link 	  	
+	    );	    
+	   	
+	   	
+	   	$this->M_DATA->insertdata('luutrutailieu',$dataluutru);
+	   	
 	   	$this->response($insert_id,200);
 	}
 

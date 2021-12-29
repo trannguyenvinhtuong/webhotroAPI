@@ -35,14 +35,14 @@ class GetTaiLieu extends RestController
 	    $idtl = $this->get('idtl');
 	    if($idtl !== null){
 	    	$data = $this->M_DATA->load_data('*',
-    									'tailieu,luutrutailieu,giangvien,capbac,chude,khuyenmaitailieu,khachhang',
-    									'tailieu.MaTL = khuyenmaitailieu.MaTL and tailieu.MaTL = luutrutailieu.MaTL and tailieu.MaGV = giangvien.MaGV and tailieu.MaCB = capbac.MaCB and giangvien.MaKH=khachhang.MaKH and tailieu.MaCD = chude.MaCD and tailieu.MaTL = '.$idtl.'');
+    									'tailieu,luutrutailieu,giangvien,capbac,chude,khachhang',
+    									'tailieu.MaTL = luutrutailieu.MaTL and tailieu.MaGV = giangvien.MaGV and tailieu.MaCB = capbac.MaCB and giangvien.MaKH=khachhang.MaKH and tailieu.MaCD = chude.MaCD and tailieu.MaTL = '.$idtl.'');
 	    	$this->response($data,200);
 	    }
 	    else{
 	    	$data = $this->M_DATA->load_data('*',
-    									'tailieu,luutrutailieu,giangvien,capbac,chude,khuyenmaitailieu,khachhang',
-    									'tailieu.MaTL = khuyenmaitailieu.MaTL and tailieu.MaTL = luutrutailieu.MaTL and tailieu.MaGV = giangvien.MaGV and tailieu.MaCB = capbac.MaCB and giangvien.MaKH=khachhang.MaKH and tailieu.MaCD = chude.MaCD');
+    									'tailieu,luutrutailieu,giangvien,capbac,chude,khachhang',
+    									'tailieu.MaTL = luutrutailieu.MaTL and tailieu.MaGV = giangvien.MaGV and tailieu.MaCB = capbac.MaCB and giangvien.MaKH=khachhang.MaKH and tailieu.MaCD = chude.MaCD');
     		$this->response($data,200);	
 	    }	    
 	}

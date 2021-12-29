@@ -35,7 +35,7 @@ class GetTaiLieuTheoGV extends RestController
 		
 	    $idkh = $this->get('idkh');
 	    if($idkh !== null){
-	    	$data = $this->M_DATA->load_data('*','khuyenmaitailieu,tailieu,giangvien,chude,capbac,khachhang,luutrutailieu','tailieu.MaGV = giangvien.MaGV and tailieu.MaCB=capbac.MaCB and chude.MaCD = tailieu.MaCD and tailieu.MaTL = khuyenmaitailieu.MaTL and tailieu.MaTL = luutrutailieu.MaTL and khachhang.MaKH = giangvien.MaKH and khachhang.MaKH = '.$idkh.'');
+	    	$data = $this->M_DATA->load_data('*','tailieu,giangvien,chude,capbac,khachhang,luutrutailieu','tailieu.MaGV = giangvien.MaGV and tailieu.MaCB=capbac.MaCB and chude.MaCD = tailieu.MaCD and tailieu.MaTL = luutrutailieu.MaTL and khachhang.MaKH = giangvien.MaKH and khachhang.MaKH = '.$idkh.'');
 	    	$this->response($data,200);		    	
 	    }
 

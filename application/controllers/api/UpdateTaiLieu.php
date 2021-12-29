@@ -45,6 +45,7 @@ class UpdateTaiLieu extends RestController
 	    $sotrang = $this->get('sotrang');
 	    $ngaydang = $this->get('ngaydang');
 	    $link = $this->get('link');
+	    $AnhTLNew = 'https://drive.google.com/uc?export=view&id='.$anhtl.'';
 	    
 	    if($matl !== null && $tentl !== null && $mota !== null && $magv !== null && $macb !== null && $macd !== null && $giatl !== null && $anhtl !== null && $demo !== null && $sotrang !== null && $ngaydang !== null){
 	    	$this->M_DATA->updatedata('tailieu','TenTL',$tentl,'MaTL',$matl);
@@ -53,7 +54,7 @@ class UpdateTaiLieu extends RestController
 	    	$this->M_DATA->updatedata('tailieu','MaCB',$macb,'MaTL',$matl);
 	    	$this->M_DATA->updatedata('tailieu','MaCD',$macd,'MaTL',$matl);
 	    	$this->M_DATA->updatedata('tailieu','GiaTL',$giatl,'MaTL',$matl);
-	    	$this->M_DATA->updatedata('tailieu','AnhTL',$anhtl,'MaTL',$matl);
+	    	$this->M_DATA->updatedata('tailieu','AnhTL',$AnhTLNew,'MaTL',$matl);
 	    	$this->M_DATA->updatedata('tailieu','Demo',$demo,'MaTL',$matl);
 	    	$this->M_DATA->updatedata('tailieu','SoTrang',$sotrang,'MaTL',$matl);
 	    	$this->M_DATA->updatedata('tailieu','NgayDang',$ngaydang,'MaTL',$matl);
