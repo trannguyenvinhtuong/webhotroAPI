@@ -34,12 +34,17 @@ class GetKhachHang extends RestController
 	    }	
 	    $tendn = $this->get('tendn');
 	    $idkh = $this->get('idkh');
+	    $email = $this->get('email');
 	    if($tendn !== null){
 	    	$data = $this->M_DATA->load_data('*','khachhang',array('TaiKhoan' => $tendn));
 	    	$this->response($data, 200);
 	    }
 	    if($idkh !== null){
 	    	$data = $this->M_DATA->load_data('*','khachhang',array('MaKH' => $idkh));
+	    	$this->response($data, 200);
+	    }	
+	    if($email !== null){
+	    	$data = $this->M_DATA->load_data('*','khachhang',array('Email' => $email));
 	    	$this->response($data, 200);
 	    }	
 	    else{
